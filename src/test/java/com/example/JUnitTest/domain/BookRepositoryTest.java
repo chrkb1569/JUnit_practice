@@ -38,6 +38,8 @@ public class BookRepositoryTest {
                 .build();
 
 
-        Assertions.assertThat(newBook).isSameAs(book);
+        Assertions.assertThat(newBook).isEqualTo(book);
     }
+
+
 }
