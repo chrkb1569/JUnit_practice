@@ -1,4 +1,4 @@
-package com.example.JUnitTest.web.dto;
+package com.example.JUnitTest.dto;
 
 import com.example.JUnitTest.domain.Book;
 import lombok.AllArgsConstructor;
@@ -8,18 +8,18 @@ import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Getter
-public class BookResponseDto {
+@Builder
+public class BookSaveDto {
     private String title;
     private String content;
     private String author;
 
-    public static BookResponseDto getInstance(Book book) {
-        return BookResponseDto.builder()
-                .title(book.getTitle())
-                .content(book.getContent())
-                .author(book.getAuthor())
+    public Book toDto() {
+        return Book.builder()
+                .title(this.title)
+                .content(this.content)
+                .author(this.author)
                 .build();
     }
 }
